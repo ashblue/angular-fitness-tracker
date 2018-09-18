@@ -1,5 +1,9 @@
 <div class="login-form">
-  <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="10pxs"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input type="email" formControlName="email" matInput placeholder="Your email">
       <mat-error *ngIf="form.get('email').hasError('email')">
@@ -23,6 +27,6 @@
 
     <p>{{message}}</p>
 
-    <button [disabled]="!form.valid" mat-button type="submit">Basic</button>
+    <button [disabled]="!form.valid" mat-raised-button color="primary" type="submit">Basic</button>
   </form>
 </div>
