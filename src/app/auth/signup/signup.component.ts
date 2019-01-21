@@ -11,7 +11,6 @@ export class SignupComponent implements OnInit {
   maxDate: Date;
 
   constructor(private authService: AuthService) {
-
   }
 
   ngOnInit() {
@@ -20,9 +19,9 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    // this.authService.registerUser({
-    //   email: form.value.email
-    // });
+    this.authService.registerUser({
+      email: form.value.email,
+      password: form.value.password,
+    });
   }
 }
