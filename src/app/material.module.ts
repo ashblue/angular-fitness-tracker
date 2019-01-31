@@ -11,7 +11,7 @@ import {
   MatToolbarModule,
   MatListModule,
   MatTabsModule,
-  MatCardModule, MatSelectModule, MatProgressSpinnerModule, MatDialogModule,
+  MatCardModule, MatSelectModule, MatProgressSpinnerModule, MatDialogModule, MatTableModule, MatSortModule, MatPaginatorModule,
 } from '@angular/material';
 
 @NgModule({
@@ -34,6 +34,9 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatButtonModule,
@@ -54,6 +57,9 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ]
 })
 
