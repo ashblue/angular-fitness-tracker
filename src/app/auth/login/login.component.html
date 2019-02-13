@@ -27,6 +27,7 @@
 
     <p>{{message}}</p>
 
-    <button [disabled]="!form.valid" mat-raised-button color="primary" type="submit">Login</button>
+    <button *ngIf="!isLoading" [disabled]="!form.valid" mat-raised-button color="primary" type="submit">Login</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
 </div>
