@@ -10,8 +10,8 @@ export const environment = {
     databaseURL: 'https://ng-fitness-tracker-bbdff.firebaseio.com',
     projectId: 'ng-fitness-tracker-bbdff',
     storageBucket: 'ng-fitness-tracker-bbdff.appspot.com',
-    messagingSenderId: '370866757237'
-  }
+    messagingSenderId: '370866757237',
+  },
 };
 
 /*
