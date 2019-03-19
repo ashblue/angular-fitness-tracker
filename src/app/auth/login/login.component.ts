@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import {UiService} from '../../shared/ui.service';
-import {Observable, Subscription} from 'rxjs';
+import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
-import {IReducer} from '../../app.reducer';
+import * as fromRoot from '../../app.reducer';
 import 'rxjs-compat/add/operator/map';
 
 @Component({
@@ -15,7 +15,6 @@ import 'rxjs-compat/add/operator/map';
 export class LoginComponent implements OnInit {
   message: string;
   isLoading$: Observable<boolean>;
-  private loadingSubs: Subscription;
 
   form = new FormGroup({
     email: new FormControl('', [
@@ -31,12 +30,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private uiService: UiService,
-    private store: Store<IReducer>,
+    private store: Store<fromRoot.State>,
   ) {
   }
 
   ngOnInit() {
-    this.isLoading$ = this.store.map(state => state.ui.isLoading);
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
   }
 
   onSubmit() {
